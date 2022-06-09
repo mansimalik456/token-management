@@ -9,6 +9,10 @@ public interface UserService {
 
 //	public Object addDetails(Long userId, FCMToken fcmToken);
 
-	public Object addUserDetails(Long uesrId, String deviceId, String token, boolean isActive);
+	public Object addUserDetails(Long uesrId, String deviceId, String token);
+
+	public Object getUserDetails(Long userId, String deviceId);
+
+	public boolean updateTokenData(Long userId, String deviceId, String token);
 
 }
