@@ -19,5 +19,7 @@ public class UserDetails {
 	private Long userId;
 	
     private Set<FCMToken> fcmToken;
+    
+    
 
 }
