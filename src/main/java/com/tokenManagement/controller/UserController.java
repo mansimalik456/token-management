@@ -21,9 +21,8 @@ public class UserController {
 	
 	@Autowired UserService userService;
 	@Autowired UserRepository userRepository;
-	
 
-	@PostMapping("/adduserdeatils")
+	@PostMapping("/api/adduserdeatils")
 	public ResponseEntity<?> addUserDetails(@RequestParam Long uesrId, @RequestParam String deviceId, @RequestParam String token){
 		Object addUserDetails = userService.addUserDetails(uesrId, deviceId, token);
 		if(Objects.nonNull(addUserDetails)) {
@@ -33,7 +32,7 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping("/getUserdetails")
+	@GetMapping("/api/getUserdetails")
 	public ResponseEntity<?> getUserDetails(@RequestParam Long userId, @RequestParam String deviceId){
 		
 		Object userDetails = userService.getUserDetails(userId, deviceId);
@@ -46,7 +45,7 @@ public class UserController {
 	}
 	
 	
-	@PutMapping("/updatetokendata")
+	@PutMapping("/api/updatetokendata")
 	public ResponseEntity<?> updateTokenData(@RequestParam Long userId, @RequestParam String deviceId, @RequestParam String token){	
 		boolean updateTokenData = userService.updateTokenData(userId, deviceId, token);
 		if(updateTokenData) {
